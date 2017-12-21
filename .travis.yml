@@ -3,7 +3,7 @@
 #   compiler key (which we don't use anyway). This is worked around for now by
 #   replacing the "compilers" with a build name prefixed by the no-op ":"
 #   command. See: https://github.com/travis-ci/casher/issues/6
-
+group: deprecated-2017Q4
 os: linux
 language: cpp
 compiler: gcc
@@ -72,4 +72,3 @@ script:
     - if [ "$RUN_TESTS" = "true" ]; then qa/pull-tester/rpc-tests.py; fi
 after_script:
     - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then (echo "Upload goes here. Something like: scp -r $BASE_OUTDIR server" || echo "upload failed"); fi
-    group: deprecated-2017Q4
