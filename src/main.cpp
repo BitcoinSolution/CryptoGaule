@@ -45,7 +45,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "Bitcoin cannot be compiled without assertions."
+# error "CryptoGaule cannot be compiled without assertions."
 #endif
 
 /**
