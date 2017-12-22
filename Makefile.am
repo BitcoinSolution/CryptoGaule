@@ -170,7 +170,7 @@ test_cryptogaule_filtered.info: test_cryptogaule.info
 
 block_test.info: test_cryptogaule_filtered.info
 	$(MKDIR_P) qa/tmp
-	-@TIMEOUT=15 qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool 0
+	-@TIMEOUT=15 qa/pull-tester/run-cryptogauled-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool 0
 	$(LCOV) -c -d $(abs_builddir)/src --t BitcoinJBlockTest -o $@
 	$(LCOV) -z -d $(abs_builddir)/src
 	$(LCOV) -z -d $(abs_builddir)/src/leveldb
@@ -184,7 +184,7 @@ test_cryptogaule_coverage.info: baseline_filtered_combined.info test_cryptogaule
 total_coverage.info:  baseline_filtered_combined.info test_cryptogaule_filtered.info block_test_filtered.info
 	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_cryptogaule_filtered.info -a block_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-test_cryptogaule.coverage/.dirstamp:  test_bitcoin_coverage.info
+test_cryptogaule.coverage/.dirstamp:  test_cryptogaule_coverage.info
 	$(GENHTML) -s $< -o $(@D)
 	@touch $@
 
@@ -192,14 +192,14 @@ total.coverage/.dirstamp: total_coverage.info
 	$(GENHTML) -s $< -o $(@D)
 	@touch $@
 
-cov: test_bitcoin.coverage/.dirstamp total.coverage/.dirstamp
+cov: test_cryptogaule.coverage/.dirstamp total.coverage/.dirstamp
 
 endif
 
 if USE_COMPARISON_TOOL
 check-local:
 	$(MKDIR_P) qa/tmp
-	@qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
+	@qa/pull-tester/run-cryptogauled-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
 endif
 
 dist_noinst_SCRIPTS = autogen.sh
