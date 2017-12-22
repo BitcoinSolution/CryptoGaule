@@ -1,7 +1,7 @@
 CryptoGaule Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)
+[![Build Status](https://travis-ci.org/BitcoinSolution/CryptoGaule.svg?branch=master)](https://travis-ci.org/BitcoinSolution/CryptoGaule)
 
 https://www.CryptoGaule.io
 
