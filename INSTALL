@@ -3,3 +3,5 @@ Building CryptoGaule
 See doc/build-*.md for instructions on building cryptogauled,
 the intended-for-services, no-graphical-interface, reference
 implementation of CryptoGaule.
+Precompiled binaries are available at github, see
+https://github.com/BitcoinSolution/CryptoGaule
