@@ -17,9 +17,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(BTC);
-    unitlist.append(mBTC);
-    unitlist.append(uBTC);
+    unitlist.append(CRYPTOGAULOIS);
+    unitlist.append(mCRYPTOGAULOIS);
+    unitlist.append(uCRYPTOGAULOIS);
     return unitlist;
 }
 
@@ -27,9 +27,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case BTC:
-    case mBTC:
-    case uBTC:
+    case CRYPTOGAULOIS:
+    case mCRYPTOGAULOIS:
+    case uCRYPTOGAULOIS:
         return true;
     default:
         return false;
@@ -40,9 +40,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("BTC");
-    case mBTC: return QString("mBTC");
-    case uBTC: return QString::fromUtf8("μBTC");
+    case CRYPTOGAULOIS: return QString("CRYPTOGAULOIS");
+    case mCRYPTOGAULOIS: return QString("mCRYPTOGAULOIS");
+    case uCRYPTOGAULOIS: return QString::fromUtf8("μCRYPTOGAULOIS");
     default: return QString("???");
     }
 }
@@ -51,9 +51,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Bitcoins");
-    case mBTC: return QString("Milli-Bitcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Bitcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case CRYPTOGAULOIS: return QString("CRYPTOGAULOIS");
+    case mCRYPTOGAULOIS: return QString("Milli-CryptoGaulois (1 / 1" THIN_SP_UTF8 "000)");
+    case uCRYPTOGAULOIS: return QString("Micro-CryptoGaulois (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -62,9 +62,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTC:  return 100000000;
-    case mBTC: return 100000;
-    case uBTC: return 100;
+    case CRYPTOGAULOIS:  return 100000000;
+    case mCRYPTOGAULOIS: return 100000;
+    case uCRYPTOGAULOIS: return 100;
     default:   return 100000000;
     }
 }
@@ -73,9 +73,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case BTC: return 8;
-    case mBTC: return 5;
-    case uBTC: return 2;
+    case CRYPTOGAULOIS: return 8;
+    case mCRYPTOGAULOIS: return 5;
+    case uCRYPTOGAULOIS: return 2;
     default: return 0;
     }
 }
