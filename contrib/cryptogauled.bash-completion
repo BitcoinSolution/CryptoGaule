@@ -1,4 +1,4 @@
-# bash programmable completion for cryptogauled(1) and bitcoin-cli(1)
+# bash programmable completion for cryptogauled(1) and cryptogaule-cli(1)
 # Copyright (c) 2012,2014 Christian von Roques <roques@mti.ag>
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -6,7 +6,7 @@
 have cryptogauled && {
 
 # call $cryptogauled for RPC
-_bitcoin_rpc() {
+_cryptogaule_rpc() {
     # determine already specified args necessary for RPC
     local rpcargs=()
     for i in ${COMP_LINE}; do
@@ -19,10 +19,10 @@ _bitcoin_rpc() {
     $cryptogauled "${rpcargs[@]}" "$@"
 }
 
-# Add bitcoin accounts to COMPREPLY
-_bitcoin_accounts() {
+# Add cryptogaule accounts to COMPREPLY
+_cryptogaule_accounts() {
     local accounts
-    accounts=$(_bitcoin_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
+    accounts=$(_cryptogaule_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
     COMPREPLY=( "${COMPREPLY[@]}" $( compgen -W "$accounts" -- "$cur" ) )
 }
 
