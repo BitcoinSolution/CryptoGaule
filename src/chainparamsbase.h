@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between bitcoin-cli and bitcoind)
- * of a given instance of the Bitcoin system.
+ * CBaseChainParams defines the base parameters (shared between cryptogaule-cli and cryptogauled)
+ * of a given instance of the CryptoGaule system.
  */
 class CBaseChainParams
 {
